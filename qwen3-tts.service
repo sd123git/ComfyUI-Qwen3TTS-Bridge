@@ -1,0 +1,18 @@
+[Unit]
+Description=Qwen3-TTS worker (separate venv, transformers 4.57)
+After=network.target
+
+[Service]
+Type=simple
+User=your_system_username
+Environment=PYTHONUNBUFFERED=1
+# Seconds idle before the model is released from VRAM (0 = never)
+Environment=QWEN_TTS_IDLE_SECONDS=300
+ExecStart=<TTS_ENV>/bin/python <COMFYUI>/custom_nodes/ComfyUI-Qwen3TTS-Bridge/tts_worker.py --serve --host 127.0.0.1 --port 8190
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
