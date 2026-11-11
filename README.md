@@ -178,6 +178,6 @@ The service uses `HF_HUB_OFFLINE=1`, so it never downloads anything. Models must
 
 ## License
 
-Node code: see `LICENSE` in this repository.
+Node code: Apache 2.0 LICENSE, in this repository.
 
 Qwen3-TTS model weights are covered by the Qwen team's own license. Review it before commercial use: https://github.com/QwenLM/Qwen3-TTS
