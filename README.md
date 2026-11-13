@@ -4,7 +4,7 @@ Run **Qwen3-TTS** inside ComfyUI without touching ComfyUI's own Python packages.
 
 ## Why a bridge?
 
-Current ComfyUI installs ship **transformers 5.x**. Qwen3-TTS needs **transformers 4.57.3**:
+Current ComfyUI installs with LTX 2.5 need **transformers 5.x**. Qwen3-TTS needs **transformers 4.57.3**:
 
 - The official `qwen-tts` package does not import on transformers 5.
 - Nodes that patch around this can load, but may produce garbled or incoherent audio.
