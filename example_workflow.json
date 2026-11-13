@@ -1,0 +1,1655 @@
+{
+  "id": "e0ed82b8-43fb-409e-ad78-8321909c7c6e",
+  "revision": 0,
+  "last_node_id": 29,
+  "last_link_id": 27,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "QwenTTSBridge",
+      "pos": [
+        -1200.1406226979757,
+        -4860.118122998632
+      ],
+      "size": [
+        400.4352502841211,
+        938.9036264138374
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            7,
+            8,
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridge",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "This is the bridge to Qwen3-TTS, 0.7b and 1.7b models. It includes nine voices and supports ten languages, and has an instruct prompt. Use this node to create speech. It can also be used to make a voice, if you keep the prompt short and connect the ref_text",
+        "Ryan",
+        "Qwen3-TTS-12Hz-1.7B-CustomVoice",
+        "English",
+        "subprocess",
+        true,
+        false,
+        "bf16",
+        0,
+        "fixed",
+        "Ryan sounds amazed and enthusiastic, almost like he can't believe what he just heard.",
+        "",
+        2048,
+        0.8,
+        20,
+        1,
+        1.05,
+        "",
+        "http://127.0.0.1:8190"
+      ],
+      "widgets_values_named": {
+        "text": "This is the bridge to Qwen3-TTS, 0.7b and 1.7b models. It includes nine voices and supports ten languages, and has an instruct prompt. Use this node to create speech. It can also be used to make a voice, if you keep the prompt short and connect the ref_text",
+        "speaker": "Ryan",
+        "model": "Qwen3-TTS-12Hz-1.7B-CustomVoice",
+        "language": "English",
+        "mode": "subprocess",
+        "unload_after": true,
+        "free_comfy_vram_first": false,
+        "precision": "bf16",
+        "seed": 0,
+        "control_after_generate": "fixed",
+        "instruct": "Ryan sounds amazed and enthusiastic, almost like he can't believe what he just heard.",
+        "custom_speaker": "",
+        "max_new_tokens": 2048,
+        "top_p": 0.8,
+        "top_k": 20,
+        "temperature": 1,
+        "repetition_penalty": 1.05,
+        "model_path": "",
+        "service_url": "http://127.0.0.1:8190"
+      }
+    },
+    {
+      "id": 2,
+      "type": "QwenTTSBridgeDialogue",
+      "pos": [
+        -93.42683417200325,
+        -2789.8337032985796
+      ],
+      "size": [
+        399.8631420401637,
+        1094.5242546353627
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "role_bank",
+          "type": "QWEN3_BRIDGE_ROLE_BANK",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            22,
+            23
+          ]
+        },
+        {
+          "name": "stem_1",
+          "type": "AUDIO",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "stem_2",
+          "type": "AUDIO",
+          "links": [
+            20
+          ]
+        },
+        {
+          "name": "stem_3",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "stem_4",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "stem_5",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "stem_6",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "stem_7",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "stem_8",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "roles",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeDialogue",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "Role8: Create dialogue with Role Bank and Dialogue Node. Role 8 is the narrator in this example. The full composition flows out through the audio socket.\nRole3: Speech from each Role channel flows through to the matching stem. So the stem 3 output has all of my dialogue, without any other dialogue. \nRole1: Variations like mood or tone on the input, in case the script calls for a mood swing.\nRole2: Merge the outputs to build your character's dialogue track.\nRole4: The stem sockets aren't needed for every channel. Just use those to build your ref_audio as needed. This voice is off screen in this scene, so it's in the composition, with no ref audio out.\nRole3: These are just a few examples. Please let me know what else is handy!",
+        "Qwen3-TTS-12Hz-1.7B-Base",
+        0.4,
+        0.8,
+        0,
+        0,
+        "English",
+        "subprocess",
+        true,
+        false,
+        "bf16",
+        365935844190083,
+        "fixed",
+        2048,
+        0.8,
+        20,
+        1,
+        1.05,
+        "",
+        "http://127.0.0.1:8190"
+      ],
+      "widgets_values_named": {
+        "script": "Role8: Create dialogue with Role Bank and Dialogue Node. Role 8 is the narrator in this example. The full composition flows out through the audio socket.\nRole3: Speech from each Role channel flows through to the matching stem. So the stem 3 output has all of my dialogue, without any other dialogue. \nRole1: Variations like mood or tone on the input, in case the script calls for a mood swing.\nRole2: Merge the outputs to build your character's dialogue track.\nRole4: The stem sockets aren't needed for every channel. Just use those to build your ref_audio as needed. This voice is off screen in this scene, so it's in the composition, with no ref audio out.\nRole3: These are just a few examples. Please let me know what else is handy!",
+        "model": "Qwen3-TTS-12Hz-1.7B-Base",
+        "line_pause": 0.4,
+        "speaker_change_pause": 0.8,
+        "sentence_pause": 0,
+        "comma_pause": 0,
+        "language": "English",
+        "mode": "subprocess",
+        "unload_after": true,
+        "free_comfy_vram_first": false,
+        "precision": "bf16",
+        "seed": 365935844190083,
+        "control_after_generate": "fixed",
+        "max_new_tokens": 2048,
+        "top_p": 0.8,
+        "top_k": 20,
+        "temperature": 1,
+        "repetition_penalty": 1.05,
+        "model_path": "",
+        "service_url": "http://127.0.0.1:8190"
+      }
+    },
+    {
+      "id": 3,
+      "type": "QwenTTSBridgeRoleBank",
+      "pos": [
+        -481.28931684524457,
+        -2805.571575980898
+      ],
+      "size": [
+        300.206640625,
+        366
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "voice_1",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": 13
+        },
+        {
+          "name": "voice_2",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": 26
+        },
+        {
+          "name": "voice_3",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": 14
+        },
+        {
+          "name": "voice_4",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": 27
+        },
+        {
+          "name": "voice_5",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": null
+        },
+        {
+          "name": "voice_6",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": null
+        },
+        {
+          "name": "voice_7",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": null
+        },
+        {
+          "name": "voice_8",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "role_bank",
+          "type": "QWEN3_BRIDGE_ROLE_BANK",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeRoleBank",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "Role1",
+        "Role2",
+        "Role3",
+        "Role4",
+        "Role5",
+        "Role6",
+        "Role7",
+        "Role8"
+      ],
+      "widgets_values_named": {
+        "role_name_1": "Role1",
+        "role_name_2": "Role2",
+        "role_name_3": "Role3",
+        "role_name_4": "Role4",
+        "role_name_5": "Role5",
+        "role_name_6": "Role6",
+        "role_name_7": "Role7",
+        "role_name_8": "Role8"
+      }
+    },
+    {
+      "id": 5,
+      "type": "QwenTTSBridgeVoiceDesign",
+      "pos": [
+        -293.49526315192145,
+        -4651.6663097917135
+      ],
+      "size": [
+        400,
+        522
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            5,
+            10,
+            11
+          ]
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeVoiceDesign",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "Hello, I'm Allen, A voice created with Qwen 3 TTS, through the bridge in comfy UI ",
+        "Allen has a calm, warm middle-aged male voice with a slight rasp.",
+        "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "English",
+        "subprocess",
+        true,
+        false,
+        "bf16",
+        1064978915917605,
+        "fixed",
+        2048,
+        0.8,
+        20,
+        1,
+        1.05,
+        "",
+        "http://127.0.0.1:8190"
+      ],
+      "widgets_values_named": {
+        "text": "Hello, I'm Allen, A voice created with Qwen 3 TTS, through the bridge in comfy UI ",
+        "voice_description": "Allen has a calm, warm middle-aged male voice with a slight rasp.",
+        "model": "Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "language": "English",
+        "mode": "subprocess",
+        "unload_after": true,
+        "free_comfy_vram_first": false,
+        "precision": "bf16",
+        "seed": 1064978915917605,
+        "control_after_generate": "fixed",
+        "max_new_tokens": 2048,
+        "top_p": 0.8,
+        "top_k": 20,
+        "temperature": 1,
+        "repetition_penalty": 1.05,
+        "model_path": "",
+        "service_url": "http://127.0.0.1:8190"
+      }
+    },
+    {
+      "id": 6,
+      "type": "QwenTTSBridgeVoiceClone",
+      "pos": [
+        638.5322778769355,
+        -4430.356518031982
+      ],
+      "size": [
+        400,
+        642
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "voice",
+          "shape": 7,
+          "type": "QWEN3_BRIDGE_VOICE",
+          "link": 1
+        },
+        {
+          "name": "ref_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_text",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "ref_text"
+          },
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            3,
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeVoiceClone",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "Load a voice, add a script, voila.",
+        "Qwen3-TTS-12Hz-1.7B-Base",
+        "English",
+        "subprocess",
+        true,
+        false,
+        "bf16",
+        136640064658106,
+        "fixed",
+        "",
+        false,
+        15,
+        2048,
+        0.8,
+        20,
+        1,
+        1.05,
+        "",
+        "http://127.0.0.1:8190",
+        0,
+        0,
+        0
+      ],
+      "widgets_values_named": {
+        "text": "Load a voice, add a script, voila.",
+        "model": "Qwen3-TTS-12Hz-1.7B-Base",
+        "language": "English",
+        "mode": "subprocess",
+        "unload_after": true,
+        "free_comfy_vram_first": false,
+        "precision": "bf16",
+        "seed": 136640064658106,
+        "control_after_generate": "fixed",
+        "ref_text": "",
+        "x_vector_only": false,
+        "ref_max_seconds": 15,
+        "max_new_tokens": 2048,
+        "top_p": 0.8,
+        "top_k": 20,
+        "temperature": 1,
+        "repetition_penalty": 1.05,
+        "model_path": "",
+        "service_url": "http://127.0.0.1:8190",
+        "line_pause": 0,
+        "sentence_pause": 0,
+        "comma_pause": 0
+      }
+    },
+    {
+      "id": 7,
+      "type": "QwenTTSBridgeLoadVoice",
+      "pos": [
+        638.5322778769355,
+        -4607.118122998632
+      ],
+      "size": [
+        308.2525390625,
+        98
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeLoadVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "female_3.wav"
+      ],
+      "widgets_values_named": {
+        "voice_file": "female_3.wav"
+      }
+    },
+    {
+      "id": 8,
+      "type": "PreviewAudio",
+      "pos": [
+        988.249539187158,
+        -4576.6663097917135
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.44.0",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 9,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        1074.4315367563838,
+        -4430.356518031982
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.44.0",
+        "Node name for S&R": "SaveAudioAdvanced",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "audio/voice testing",
+        "flac"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/voice testing",
+        "format": "flac"
+      }
+    },
+    {
+      "id": 10,
+      "type": "QwenTTSBridgeMakeVoice",
+      "pos": [
+        -293.49526315192145,
+        -3960.2144965847947
+      ],
+      "size": [
+        400,
+        228
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 5
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "widget": {
+            "name": "ref_text"
+          },
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": null
+        },
+        {
+          "name": "saved_name",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeMakeVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "",
+        "allen_01",
+        true,
+        false,
+        15,
+        "increment"
+      ],
+      "widgets_values_named": {
+        "ref_text": "",
+        "name": "allen_01",
+        "save_to_library": true,
+        "x_vector_only": false,
+        "ref_max_seconds": 15,
+        "on_existing": "increment"
+      }
+    },
+    {
+      "id": 11,
+      "type": "QwenTTSBridgeMakeVoice",
+      "pos": [
+        -1200.1406226979757,
+        -3831.2144965847947
+      ],
+      "size": [
+        400,
+        228
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": []
+        },
+        {
+          "name": "saved_name",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeMakeVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "She said she would be here by noon, but the train was running late.",
+        "ryan_amazed",
+        false,
+        false,
+        15,
+        "increment"
+      ],
+      "widgets_values_named": {
+        "ref_text": "She said she would be here by noon, but the train was running late.",
+        "name": "ryan_amazed",
+        "save_to_library": false,
+        "x_vector_only": false,
+        "ref_max_seconds": 15,
+        "on_existing": "increment"
+      }
+    },
+    {
+      "id": 12,
+      "type": "PreviewAudio",
+      "pos": [
+        -751.2893168452446,
+        -4860.118122998632
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 13,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        -751.2893168452446,
+        -4679.356518031982
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "SaveAudioAdvanced",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "flac"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/ComfyUI",
+        "format": "flac"
+      }
+    },
+    {
+      "id": 14,
+      "type": "PreviewAudio",
+      "pos": [
+        140.78439440236298,
+        -4661.118122998632
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 15,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        140.784394402363,
+        -4513.356518031982
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "SaveAudioAdvanced",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "flac"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/ComfyUI",
+        "format": "flac"
+      }
+    },
+    {
+      "id": 16,
+      "type": "QwenTTSBridgeLoadVoice",
+      "pos": [
+        -1265.8349942557604,
+        -2841.4447930852007
+      ],
+      "size": [
+        308.2525390625,
+        98
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": []
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeLoadVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "ryan_bored_01.wav"
+      ],
+      "widgets_values_named": {
+        "voice_file": "ryan_bored_01.wav"
+      }
+    },
+    {
+      "id": 18,
+      "type": "QwenTTSBridgeLoadVoice",
+      "pos": [
+        -1243.4949684107523,
+        -2607.229491371822
+      ],
+      "size": [
+        308.2525390625,
+        98
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": []
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeLoadVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "gina_base.wav"
+      ],
+      "widgets_values_named": {
+        "voice_file": "gina_base.wav"
+      }
+    },
+    {
+      "id": 19,
+      "type": "QwenTTSBridgeLoadVoice",
+      "pos": [
+        -861.9222567007922,
+        -2652.229491371822
+      ],
+      "size": [
+        308.2525390625,
+        98
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": [
+            27
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": []
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeLoadVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "rob_base.wav"
+      ],
+      "widgets_values_named": {
+        "voice_file": "rob_base.wav"
+      }
+    },
+    {
+      "id": 20,
+      "type": "QwenTTSBridgeLoadVoice",
+      "pos": [
+        -924.5418559077447,
+        -2291.571575980898
+      ],
+      "size": [
+        308.2525390625,
+        98
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": [
+            15
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeLoadVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "male_6.wav"
+      ],
+      "widgets_values_named": {
+        "voice_file": "male_6.wav"
+      }
+    },
+    {
+      "id": 22,
+      "type": "AudioMerge",
+      "pos": [
+        368.53227787693555,
+        -2409.571575980898
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio1",
+          "type": "AUDIO",
+          "link": 19
+        },
+        {
+          "name": "audio2",
+          "type": "AUDIO",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            21,
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "AudioMerge",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "add"
+      ],
+      "widgets_values_named": {
+        "merge_method": "add"
+      }
+    },
+    {
+      "id": 23,
+      "type": "PreviewAudio",
+      "pos": [
+        676.7848169394355,
+        -2409.571575980898
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 24,
+      "type": "PreviewAudio",
+      "pos": [
+        368.5322778769355,
+        -2808.229491371822
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 25,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        368.53227787693555,
+        -2690.229491371822
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "SaveAudioAdvanced",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "flac"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/ComfyUI",
+        "format": "flac"
+      }
+    },
+    {
+      "id": 26,
+      "type": "SaveAudioAdvanced",
+      "pos": [
+        676.7848169394355,
+        -2246.571575980898
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.45.0",
+        "Node name for S&R": "SaveAudioAdvanced",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "flac"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "audio/ComfyUI",
+        "format": "flac"
+      }
+    },
+    {
+      "id": 27,
+      "type": "Note",
+      "pos": [
+        -1668.9389154808016,
+        -4852.28812828648
+      ],
+      "size": [
+        329.11101090878617,
+        557.9316102544976
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI-Qwen3TTS-Bridge\n\nKnown issue: Role Bank intended to allow Roles remaining for easier dialogue. Currently that causes a traceback, so leave Role1 in the bank and use Role1:\"dialogue\" in the prompt for now, it's on the fix list.\n\nKnown issue: Voices saved with Make Voice node may not show up for selection in the Load Voice nodes at first, it's on the fix list.\n\nFurther enhancements and fixes in the next update, so keep an eye out if you find this useful."
+      ],
+      "widgets_values_named": {
+        "text": "ComfyUI-Qwen3TTS-Bridge\n\nKnown issue: Role Bank intended to allow Roles remaining for easier dialogue. Currently that causes a traceback, so leave Role1 in the bank and use Role1:\"dialogue\" in the prompt for now, it's on the fix list.\n\nKnown issue: Voices saved with Make Voice node may not show up for selection in the Load Voice nodes at first, it's on the fix list.\n\nFurther enhancements and fixes in the next update, so keep an eye out if you find this useful."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 29,
+      "type": "QwenTTSBridgeLoadVoice",
+      "pos": [
+        -861.9222567007923,
+        -2841.4447930852007
+      ],
+      "size": [
+        308.2525390625,
+        98
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "voice",
+          "type": "QWEN3_BRIDGE_VOICE",
+          "links": [
+            26
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "ref_text",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "QwenTTSBridgeLoadVoice",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "ryan_amazed_01.wav"
+      ],
+      "widgets_values_named": {
+        "voice_file": "ryan_amazed_01.wav"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      7,
+      0,
+      6,
+      0,
+      "QWEN3_BRIDGE_VOICE"
+    ],
+    [
+      2,
+      7,
+      2,
+      6,
+      2,
+      "STRING"
+    ],
+    [
+      3,
+      6,
+      0,
+      8,
+      0,
+      "AUDIO"
+    ],
+    [
+      5,
+      5,
+      0,
+      10,
+      0,
+      "AUDIO"
+    ],
+    [
+      6,
+      5,
+      1,
+      10,
+      1,
+      "STRING"
+    ],
+    [
+      7,
+      1,
+      0,
+      11,
+      0,
+      "AUDIO"
+    ],
+    [
+      8,
+      1,
+      0,
+      12,
+      0,
+      "AUDIO"
+    ],
+    [
+      10,
+      5,
+      0,
+      14,
+      0,
+      "AUDIO"
+    ],
+    [
+      13,
+      16,
+      0,
+      3,
+      0,
+      "QWEN3_BRIDGE_VOICE"
+    ],
+    [
+      14,
+      18,
+      0,
+      3,
+      2,
+      "QWEN3_BRIDGE_VOICE"
+    ],
+    [
+      15,
+      20,
+      0,
+      3,
+      7,
+      "QWEN3_BRIDGE_VOICE"
+    ],
+    [
+      19,
+      2,
+      1,
+      22,
+      0,
+      "AUDIO"
+    ],
+    [
+      20,
+      2,
+      2,
+      22,
+      1,
+      "AUDIO"
+    ],
+    [
+      21,
+      22,
+      0,
+      23,
+      0,
+      "AUDIO"
+    ],
+    [
+      22,
+      2,
+      0,
+      24,
+      0,
+      "AUDIO"
+    ],
+    [
+      25,
+      3,
+      0,
+      2,
+      0,
+      "QWEN3_BRIDGE_ROLE_BANK"
+    ],
+    [
+      26,
+      29,
+      0,
+      3,
+      1,
+      "QWEN3_BRIDGE_VOICE"
+    ],
+    [
+      27,
+      19,
+      0,
+      3,
+      3,
+      "QWEN3_BRIDGE_VOICE"
+    ],
+    [
+      4,
+      6,
+      0,
+      9,
+      0,
+      "AUDIO"
+    ],
+    [
+      9,
+      1,
+      0,
+      13,
+      0,
+      "AUDIO"
+    ],
+    [
+      11,
+      5,
+      0,
+      15,
+      0,
+      "AUDIO"
+    ],
+    [
+      23,
+      2,
+      0,
+      25,
+      0,
+      "AUDIO"
+    ],
+    [
+      24,
+      22,
+      0,
+      26,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "moss_bbox_state_id": "k2cf_1794512255114_tf3cirsb1w",
+    "ue_links": [],
+    "ds": {
+      "scale": 0.45,
+      "offset": [
+        1164.9388443123994,
+        3651.70405234446
+      ]
+    },
+    "links_added_by_ue": [],
+    "frontendVersion": "1.59.1",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
